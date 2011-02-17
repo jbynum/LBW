@@ -32,7 +32,7 @@
 			wheel.lineJoine = "round";
 			wheel.strokeStyle = "#7F7F7F";
 			wheel.beginPath();
-			wheel.arc(320, 240, 230, 0, 180);
+			wheel.arc(320, 240, 230, 0, 360);
 			wheel.stroke();
 			wheel.closePath();
 			
@@ -52,20 +52,33 @@
 			
 
 			//envrionment
-			var env = 5;
-			
-			var env_a = (230 - (env * 23));
-			var env_b = env_a;
+			var env = 10;
+			console.log(env*23);
+			var env_a = 320 - (env * 23);
+			console.log("Env A = " + env_a);
+			var env_b = 240 - (env * 23);
+			console.log("Env B = " + env_b);
 			var c = (env_a*env_a) + (env_a*env_a);
+			console.log("C = " + c);
 			c = Math.floor(Math.sqrt(c));
+			console.log("C Floored = " + c);
 			wheel.fillStyle = "#ff0000";
 			wheel.beginPath();
 			wheel.moveTo(320,240);
 			wheel.lineTo(env_a, 240);
-			wheel.arcTo(env_a, 240 - c, 320, 240 - c, c);
+			//wheel.arcTo(env_a, 240 - c, 320 - c, env_b, c/2);
+			wheel.lineTo(c + 30, c-50);
 			wheel.lineTo(320,240);
 			wheel.stroke();
 			wheel.fill();
+			wheel.closePath();
+			
+			wheel.lineWidth = 2;
+			wheel.lineJoine = "round";
+			wheel.strokeStyle = "#7F7F7F";
+			wheel.beginPath();
+			wheel.arc(c, c, 1, 0, 360);
+			wheel.stroke();
 			wheel.closePath();
 			
 	      }
