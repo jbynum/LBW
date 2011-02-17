@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Life Balance Wheel</title>
+		<style>
+			#wrapper {margin:0 auto; width:650px;}
+			canvas {border:1px dashed #ccc;}
+		</style>
+	</head>
+	<body onload="drawWheel();">
+		<div id="wrapper">
+			<header>
+				<h1>Life Balance Wheel</h1>
+			</header>
+		
+			<section>
+				<canvas id="wheel" width="640" height="480">
+					Your browser does not support this feature. Please upgrade your browser.
+				</canvas>
+			</section>
+		
+			<footer>
+				<small>&copy; 2011 Pignite</small>
+			</footer>
+		</div>
+		<script>
+	      function drawWheel(){
+	        var wheel = document.getElementById('wheel').getContext('2d');
+			
+			wheel.lineWidth = 2;
+			wheel.lineJoine = "round";
+			wheel.strokeStyle = "#7F7F7F";
+			wheel.beginPath();
+			wheel.arc(320, 240, 230, 0, 180);
+			wheel.stroke();
+			wheel.closePath();
+			
+			var center = "320,240";
+			
+			wheel.beginPath();
+			wheel.moveTo(90,240);
+			wheel.lineTo(550,240);
+			wheel.moveTo(320,10);
+			wheel.lineTo(320, 470);
+			wheel.moveTo(157,77);
+			wheel.lineTo(482,403);
+			wheel.moveTo(157,403);
+			wheel.lineTo(483,77);
+			wheel.stroke();
+			wheel.closePath();
+			
+
+			// envrionment
+			var a = (320 - 240);
+			var c = (a*a) + (a*a);
+			c = Math.floor(Math.sqrt(c));
+			wheel.fillStyle = "#ff0000";
+			wheel.beginPath();
+			wheel.moveTo(320,240);
+			wheel.lineTo(90,240);
+			wheel.lineTo(c,c);
+			wheel.lineTo(320,240);
+			wheel.stroke();
+			wheel.fill();
+			wheel.closePath();
+			
+	      }
+			
+			
+		</script>
+		
+	</body>
+</html>
+
