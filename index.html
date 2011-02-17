@@ -15,7 +15,7 @@
 			</header>
 		
 			<section>
-				<canvas id="wheel" width="640" height="480">
+				<canvas id="wheel" width="480" height="480">
 					Your browser does not support this feature. Please upgrade your browser.
 				</canvas>
 			</section>
@@ -32,55 +32,45 @@
 			wheel.lineJoine = "round";
 			wheel.strokeStyle = "#7F7F7F";
 			wheel.beginPath();
-			wheel.arc(320, 240, 230, 0, 360);
+			wheel.arc(240, 240, 240, 0, 360);
 			wheel.stroke();
 			wheel.closePath();
 			
 			var center = "320,240";
 			
 			wheel.beginPath();
-			wheel.moveTo(90,240);
-			wheel.lineTo(550,240);
-			wheel.moveTo(320,10);
-			wheel.lineTo(320, 470);
-			wheel.moveTo(157,77);
-			wheel.lineTo(482,403);
-			wheel.moveTo(157,403);
-			wheel.lineTo(483,77);
+			wheel.moveTo(0,240);
+			wheel.lineTo(480,240);
+			wheel.moveTo(240,0);
+			wheel.lineTo(240, 480);
+			wheel.moveTo(0,0);
+			wheel.lineTo(480,480);
+			wheel.moveTo(0,480);
+			wheel.lineTo(480,0);
 			wheel.stroke();
 			wheel.closePath();
 			
 
 			//envrionment
-			var env = 10;
-			console.log(env*23);
-			var env_a = 320 - (env * 23);
-			console.log("Env A = " + env_a);
-			var env_b = 240 - (env * 23);
-			console.log("Env B = " + env_b);
-			var c = (env_a*env_a) + (env_a*env_a);
-			console.log("C = " + c);
-			c = Math.floor(Math.sqrt(c));
-			console.log("C Floored = " + c);
-			wheel.fillStyle = "#ff0000";
+			var env = 5;
 			wheel.beginPath();
-			wheel.moveTo(320,240);
-			wheel.lineTo(env_a, 240);
-			//wheel.arcTo(env_a, 240 - c, 320 - c, env_b, c/2);
-			wheel.lineTo(c + 30, c-50);
-			wheel.lineTo(320,240);
-			wheel.stroke();
+			wheel.arc(240,240,env*24, 180 * Math.PI/180, 225 * Math.PI/180);
 			wheel.fill();
 			wheel.closePath();
 			
-			wheel.lineWidth = 2;
-			wheel.lineJoine = "round";
-			wheel.strokeStyle = "#7F7F7F";
-			wheel.beginPath();
-			wheel.arc(c, c, 1, 0, 360);
-			wheel.stroke();
-			wheel.closePath();
 			
+			// wheel.beginPath();
+			// 			wheel.moveTo(240,240);
+			// 			wheel.lineTo(240 - env*24, 240);
+			// 			wheel.lineTo(240 - en, 240 - env*24);
+			// 			wheel.fill();
+			// 			wheel.closePath();
+			
+			var plans = 10;
+			wheel.beginPath();
+			wheel.arc(240,240,plans*24, 225 * Math.PI/180, 270 * Math.PI/180);
+			wheel.fill();
+			wheel.closePath();			
 	      }
 			
 			
