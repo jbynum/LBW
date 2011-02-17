@@ -31,12 +31,11 @@
 			wheel.lineWidth = 2;
 			wheel.lineJoine = "round";
 			wheel.strokeStyle = "#7F7F7F";
+			
 			wheel.beginPath();
-			wheel.arc(240, 240, 240, 0, 360);
+			wheel.arc(240, 240, 240, 0, Math.PI*2, true);
 			wheel.stroke();
 			wheel.closePath();
-			
-			var center = "320,240";
 			
 			wheel.beginPath();
 			wheel.moveTo(0,240);
@@ -54,21 +53,21 @@
 			//envrionment
 			var env = 5;
 			wheel.beginPath();
-			wheel.arc(240,240,env*24, 180 * Math.PI/180, 225 * Math.PI/180);
+			wheel.arc(240,240,env*24, 180 * Math.PI/180, 225 * Math.PI/180, false);
 			wheel.fill();
 			wheel.closePath();
 			
-			
-			// wheel.beginPath();
-			// 			wheel.moveTo(240,240);
-			// 			wheel.lineTo(240 - env*24, 240);
-			// 			wheel.lineTo(240 - en, 240 - env*24);
-			// 			wheel.fill();
-			// 			wheel.closePath();
+			wheel.fillStyle = "#ff0000"
+			wheel.beginPath();
+			wheel.moveTo(240,240);
+			wheel.lineTo(240 - env*24, 240);
+			wheel.lineTo(154, 154);
+			wheel.fill();
+			wheel.closePath();
 			
 			var plans = 10;
 			wheel.beginPath();
-			wheel.arc(240,240,plans*24, 225 * Math.PI/180, 270 * Math.PI/180);
+			wheel.arc(240,240,plans*24, 225 * Math.PI/180, 270 * Math.PI/180, false);
 			wheel.fill();
 			wheel.closePath();			
 	      }
