@@ -1,12 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html class="no-js">
 	<head>
 		<meta charset="UTF-8">
 		<title>Life Balance Wheel</title>
 		<style>
+			body {background:#464646;color:white;font-family:sans-serif;}
 			#wrapper {margin:0 auto; width:480px;}
-			canvas {border:1px dashed #ccc;}
+			/*canvas {border:1px dashed #ccc;}*/
 		</style>
+		<script src="js/modernizr-1.6.min.js"></script>
+		<!--[if IE]><script src="js/excanvas.compiled.js"></script><![endif]-->
 	</head>
 	<body onload="drawWheel();">
 		<div id="wrapper">
@@ -28,28 +31,17 @@
 	      function drawWheel(){			
 	        var wheel = document.getElementById('wheel').getContext('2d');
 			
-			wheel.lineWidth = 2;
-			wheel.lineJoine = "round";
+			wheel.lineWidth = 1;
+			wheel.lineJoine = "bevel";
 			wheel.strokeStyle = "#7F7F7F";
 			
+			for(var i = 0; i < 11; i++) {
 			wheel.beginPath();
-			wheel.arc(240, 240, 240, 0, Math.PI*2, true);
+			wheel.arc(240, 240, i*24, 0, Math.PI*2, true);
 			wheel.stroke();
 			wheel.closePath();
-
+			}
 			
-			wheel.beginPath();
-			wheel.moveTo(0,240);
-			wheel.lineTo(480,240);
-			wheel.moveTo(240,0);
-			wheel.lineTo(240, 480);
-			wheel.moveTo(0,0);
-			wheel.lineTo(480,480);
-			wheel.moveTo(0,480);
-			wheel.lineTo(480,0);
-			wheel.stroke();
-			wheel.closePath();
-
 			//family
 			var family = 2;
 			wheel.fillStyle = "#f6e677"
@@ -178,7 +170,19 @@
 			wheel.lineTo(240,240 - plans*24);
 			wheel.lineTo(240 -plans*(17),240-plans*(17));
 			wheel.fill();
-			wheel.closePath();			
+			wheel.closePath();	
+			
+			wheel.beginPath();
+			wheel.moveTo(0,240);
+			wheel.lineTo(480,240);
+			wheel.moveTo(240,0);
+			wheel.lineTo(240, 480);
+			wheel.moveTo(70,70);
+			wheel.lineTo(410,410);
+			wheel.moveTo(70,410);
+			wheel.lineTo(410,70);
+			wheel.stroke();
+			wheel.closePath();		
 	      }
 		</script>
 		
