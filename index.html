@@ -52,14 +52,17 @@
 			
 
 			//envrionment
-			var a = (320 - 240);
-			var c = (a*a) + (a*a);
+			var env = 5;
+			
+			var env_a = (230 - (env * 23));
+			var env_b = env_a;
+			var c = (env_a*env_a) + (env_a*env_a);
 			c = Math.floor(Math.sqrt(c));
 			wheel.fillStyle = "#ff0000";
 			wheel.beginPath();
 			wheel.moveTo(320,240);
-			wheel.lineTo(90,240);
-			wheel.lineTo(c,c);
+			wheel.lineTo(env_a, 240);
+			wheel.arcTo(env_a, 240 - c, 320, 240 - c, c);
 			wheel.lineTo(320,240);
 			wheel.stroke();
 			wheel.fill();
