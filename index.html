@@ -10,7 +10,8 @@
 			header {text-align:center;}
 			canvas {float:left;margin-top:50px;}
 			div#sliders {width:450px;float:left;margin-left:20px;}
-			.slider {margin-bottom:5px;}
+			.slider {margin-bottom:30px !important;}
+			.tick { z-index: 0; position: absolute; height: 100%; font-size: 1em; line-height:1em; text-align: left;top:20px;background:none !important; border:none !important; }
 		</style>
 		<link rel="stylesheet" href="css/jquery-ui.css">
 		<script src="js/modernizr-1.6.min.js"></script>
@@ -46,6 +47,7 @@
 		<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
 		<script src="js/script.js"></script>
 		<script>
+				
 				$( "div.slider" ).each(function(){
 					$(this).slider({
 						value:0,
