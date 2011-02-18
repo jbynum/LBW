@@ -23,6 +23,21 @@ function drawWheel(){
 	wheel.lineTo(410,70);
 	wheel.stroke();
 	wheel.closePath();
+	
+	//label it!
+	wheel.font = "bold 20px sans-serif";
+	wheel.fillStyle = "#ffffff"
+	wheel.fillText("Family", 270, 80);
+	wheel.fillText("School Work", 325, 200);
+	wheel.fillText("Health Fitness", 315, 300);
+	wheel.fillText("Social Fun", 260, 400);
+	wheel.fillText("Dating/Friends", 96, 400);
+	wheel.fillText("Purpose", 40, 270);
+	wheel.fillText("Spirituality", 40, 290);
+	wheel.fillText("Religion", 40, 310);
+	wheel.fillText("Physical", 40, 180);
+	wheel.fillText("Environment", 40,200);
+	wheel.fillText("Future Plans", 110, 80);
 }
 function drawEverything(family,school,health,social,dating,purpose,environment,plans) {
 	var wheel = document.getElementById('wheel').getContext('2d');
@@ -35,13 +50,13 @@ function drawEverything(family,school,health,social,dating,purpose,environment,p
 	
 	//draw the wedgies
 	//family
-	wheel.fillStyle = "#f6e677"
+	wheel.fillStyle = "#8d7f2b"
 	wheel.beginPath();
 	wheel.arc(240,240,family*24, 270 * Math.PI/180, 315 * Math.PI/180, false);
 	wheel.fill();
 	wheel.closePath();
 	
-	wheel.fillStyle = "#faf0b3"
+	wheel.fillStyle = "#ffe64e"
 	wheel.beginPath();
 	wheel.moveTo(240,240);
 	wheel.lineTo(240,240 - family*24);
@@ -67,13 +82,13 @@ function drawEverything(family,school,health,social,dating,purpose,environment,p
 	
 	//health
 	//var health = 6;
-	wheel.fillStyle = "#d4e9ea"
+	wheel.fillStyle = "#305355"
 	wheel.beginPath();
 	wheel.arc(240,240,health*24, 0 * Math.PI/180, 45 * Math.PI/180, false);
 	wheel.fill();
 	wheel.closePath();
 	
-	wheel.fillStyle = "#e3f1f2"
+	wheel.fillStyle = "#6eb9bd"
 	wheel.beginPath();
 	wheel.moveTo(240,240);
 	wheel.lineTo(240 + health*24, 240);
@@ -173,5 +188,21 @@ function drawEverything(family,school,health,social,dating,purpose,environment,p
 	wheel.moveTo(70,410);
 	wheel.lineTo(410,70);
 	wheel.stroke();
-	wheel.closePath();		
+	wheel.closePath();
+	
+	//label it!
+	wheel.font = "bold 20px sans-serif";
+	wheel.fillStyle = "#ffffff"
+	wheel.fillText("Family", 270, 80);
+	wheel.fillText("School Work", 325, 200);
+	wheel.fillText("Health Fitness", 315, 300);
+	wheel.fillText("Social Fun", 260, 400);
+	wheel.fillText("Dating/Friends", 96, 400);
+	wheel.fillText("Purpose", 40, 270);
+	wheel.fillText("Spirituality", 40, 290);
+	wheel.fillText("Religion", 40, 310);
+	wheel.fillText("Physical", 40, 180);
+	wheel.fillText("Environment", 40,200);
+	wheel.fillText("Future Plans", 110, 80);
+			
   }
