@@ -26,7 +26,7 @@ function drawWheel(){
 	
 	//label it!
 	wheel.font = "bold 20px sans-serif";
-	wheel.fillStyle = "#ffffff";
+	wheel.fillStyle = "#000";
 	wheel.fillText("Family", 270, 80);
 	wheel.fillText("School Work", 325, 200);
 	wheel.fillText("Health Fitness", 315, 300);
@@ -192,7 +192,7 @@ function drawEverything(family,school,health,social,dating,purpose,environment,p
 	
 	//label it!
 	wheel.font = "bold 20px sans-serif";
-	wheel.fillStyle = "#ffffff"
+	wheel.fillStyle = "#000"
 	wheel.fillText("Family", 270, 80);
 	wheel.fillText("School Work", 325, 200);
 	wheel.fillText("Health Fitness", 315, 300);
@@ -204,5 +204,21 @@ function drawEverything(family,school,health,social,dating,purpose,environment,p
 	wheel.fillText("Physical", 40, 180);
 	wheel.fillText("Environment", 40,200);
 	wheel.fillText("Future Plans", 110, 80);
+	
+	
+	//label it!
+	// wheel.font = "bold 20px sans-serif";
+	// wheel.fillStyle = "#ffffff"
+	// wheel.fillText("Family", 270, 80);
+	// wheel.fillText("School Work", 325, 200);
+	// wheel.fillText("Health Fitness", 315, 300);
+	// wheel.fillText("Social Fun", 260, 400);
+	// wheel.fillText("Dating/Friends", 96, 400);
+	// wheel.fillText("Purpose", 40, 270);
+	// wheel.fillText("Spirituality", 40, 290);
+	// wheel.fillText("Religion", 40, 310);
+	// wheel.fillText("Physical", 40, 180);
+	// wheel.fillText("Environment", 40,200);
+	// wheel.fillText("Future Plans", 110, 80);
 			
   }
