@@ -26,7 +26,7 @@ function drawWheel(){
 	
 	//label it!
 	wheel.font = "bold 20px sans-serif";
-	wheel.fillStyle = "#ffffff"
+	wheel.fillStyle = "#ffffff";
 	wheel.fillText("Family", 270, 80);
 	wheel.fillText("School Work", 325, 200);
 	wheel.fillText("Health Fitness", 315, 300);
