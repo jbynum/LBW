@@ -4,20 +4,28 @@
 		<meta charset="UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<title>Life Balance Wheel</title>
+		<link rel="stylesheet" href="css/jquery-ui.css">
 		<style>
 			body {background:#464646;color:white;font-family:sans-serif;}
 			#wrapper {margin:0 auto; width:950px;}
 			header {text-align:center;}
 			canvas {float:left;margin-top:50px;background:#fff;}
 			div#sliders {width:450px;float:left;margin-left:20px;}
-			.slider {margin-bottom:30px !important;}
-			.tick { z-index: 0; position: absolute; height: 100%; font-size: 1em; line-height:1em; text-align: left;top:20px;background:none !important; border:none !important; }
+			.slider {margin-bottom:20px !important;}		
+			div#sliders input {border:0;background:none;font-size:14px;color:#F6A828;}
+			div#family_slider div.ui-widget-header {background:#ffe64e;}
+			div#school_slider div.ui-widget-header {background:#e0e69c;}
+			div#health_slider div.ui-widget-header {background:#6eb9bd;}
+			div#social_slider div.ui-widget-header {background:#f1ce8c;}
+			div#dating_slider div.ui-widget-header {background:#98a9d5;}
+			div#purpose_slider div.ui-widget-header {background:#e39a7a;}
+			div#environment_slider div.ui-widget-header {background:#a4c89c;}
+			div#plans_slider div.ui-widget-header {background:#8b9cac;}
 		</style>
 		<style type="text/css" media="print">
 			header {text-align:left;}
 			#sliders {display:none;}
 		</style>
-		<link rel="stylesheet" href="css/jquery-ui.css">
 		<script src="js/modernizr-1.6.min.js"></script>
 		<!--[if IE]><script src="js/excanvas.js"></script><![endif]-->
 	</head>
@@ -32,14 +40,30 @@
 					Your browser does not support this feature. Please upgrade your browser.
 				</canvas>
 				<div id="sliders">
-					<p>Family: <div id="family_slider" class="slider"></div></p>
-					<p>School Work: <div id="school_slider" class="slider"></div></p>
-					<p>Health Fitness: <div id="health_slider" class="slider"></div></p>
-					<p>Social Fun: <div id="social_slider" class="slider"></div></p>
-					<p>Dating/Friends: <div id="dating_slider" class="slider"></div></p>
-					<p>Purpose/Spirituality/Religion: <div id="purpose_slider" class="slider"></div></p>
-					<p>Physical Environment: <div id="environment_slider" class="slider"></div></p>
-					<p>Future Plans: <div id="plans_slider" class="slider"></div></p>
+					<p>Family: <input type="text" class="family_slider" />
+						<div id="family_slider" class="slider"></div>
+					</p>
+					<p>School Work: <input type="text" class="school_slider" />
+						<div id="school_slider" class="slider"></div>
+					</p>
+					<p>Health Fitness: <input type="text" class="health_slider" />
+						<div id="health_slider" class="slider"></div>
+					</p>
+					<p>Social Fun: <input type="text" class="social_slider" />
+						<div id="social_slider" class="slider"></div>
+					</p>
+					<p>Dating/Friends: <input type="text" class="dating_slider" />
+						<div id="dating_slider" class="slider"></div>
+					</p>
+					<p>Purpose/Spirituality/Religion: <input type="text" class="purpose_slider" />
+						<div id="purpose_slider" class="slider"></div>
+					</p>
+					<p>Physical Environment: <input type="text" class="environment_slider" />
+						<div id="environment_slider" class="slider"></div>
+					</p>
+					<p>Future Plans: <input type="text" class="plans_slider" />
+						<div id="plans_slider" class="slider"></div>
+					</p>
 				</div>
 			</section>
 			<div style="clear:both"></div>
@@ -54,6 +78,7 @@
 				
 				$( "div.slider" ).each(function(){
 					$(this).slider({
+						range: "min",
 						value:0,
 						min: 0,
 						max: 10,
@@ -69,6 +94,10 @@
 								$( "#environment_slider" ).slider( "value" ),
 								$( "#plans_slider" ).slider( "value" )
 							);
+						},
+						slide: function( event, ui ) {
+								var input_class = ($(this).attr("id"));
+								$("input." + input_class).val(ui.value*1000/100 + "%");
 						}
 					});
 				});
