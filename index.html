@@ -9,7 +9,9 @@
 			body {background:#464646;color:white;font-family:sans-serif;}
 			#wrapper {margin:0 auto; width:950px;}
 			header {text-align:center;}
-			canvas {float:left;margin-top:50px;background:#fff;}
+			#wheelHolder {float:left;margin-top:50px;background:#fff;}
+			#print {color:#444; text-align:center;display:none;}
+			#print a {color:#999;}
 			div#sliders {width:450px;float:left;margin-left:20px;}
 			.slider {margin-bottom:20px !important;}		
 			div#sliders input {border:0;background:none;font-size:14px;color:#F6A828;}
@@ -25,6 +27,7 @@
 		<style type="text/css" media="print">
 			header {text-align:left;}
 			.slider {display:none;}
+			#print {display:none !important;}
 		</style>
 		<script src="js/modernizr-1.6.min.js"></script>
 		<!--[if IE]><script src="js/excanvas.js"></script><![endif]-->
@@ -36,9 +39,12 @@
 			</header>
 		
 			<section>
+				<div id="wheelHolder">
 				<canvas id="wheel" width="480" height="480">
 					Your browser does not support this feature. Please upgrade your browser.
 				</canvas>
+				<p id="print">All done? <a href="#" onclick="window.print();">Print</a> your life balance wheel now.</p>
+				</div>
 				<div id="sliders">
 					<p>Family: <input type="text" class="family_slider" />
 						<div id="family_slider" class="slider"></div>
@@ -65,6 +71,7 @@
 						<div id="plans_slider" class="slider"></div>
 					</p>
 				</div>
+				
 			</section>
 			<div style="clear:both"></div>
 			<footer>
@@ -74,34 +81,6 @@
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
 		<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
 		<script src="js/script.js"></script>
-		<script>
-				
-				$( "div.slider" ).each(function(){
-					$(this).slider({
-						range: "min",
-						value:0,
-						min: 0,
-						max: 10,
-						step: 1,
-						change: function(event,ui){
-							drawEverything(
-								$( "#family_slider" ).slider( "value" ),
-								$( "#school_slider" ).slider( "value" ),
-								$( "#health_slider" ).slider( "value" ),
-								$( "#social_slider" ).slider( "value" ),
-								$( "#dating_slider" ).slider( "value" ),
-								$( "#purpose_slider" ).slider( "value" ),
-								$( "#environment_slider" ).slider( "value" ),
-								$( "#plans_slider" ).slider( "value" )
-							);
-						},
-						slide: function( event, ui ) {
-								var input_class = ($(this).attr("id"));
-								$("input." + input_class).val(ui.value*1000/100 + "%");
-						}
-					});
-				});
-		</script>
 	</body>
 </html>
 

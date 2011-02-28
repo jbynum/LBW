@@ -1,5 +1,4 @@
-HTML5 and Canvas Experiment
+h1. HTML5 and Canvas Experiment
 
 Trying to build something like this without animation.
-
 http://www.mindtools.com/media/FlashDiagrams/MindtoolsWheel.swf

@@ -1,3 +1,33 @@
+$(document).ready(function(){
+	$('#print').show();
+});
+
+$( "div.slider" ).each(function(){
+	$(this).slider({
+		range: "min",
+		value:0,
+		min: 0,
+		max: 10,
+		step: 1,
+		change: function(event,ui){
+			drawEverything(
+				$( "#family_slider" ).slider( "value" ),
+				$( "#school_slider" ).slider( "value" ),
+				$( "#health_slider" ).slider( "value" ),
+				$( "#social_slider" ).slider( "value" ),
+				$( "#dating_slider" ).slider( "value" ),
+				$( "#purpose_slider" ).slider( "value" ),
+				$( "#environment_slider" ).slider( "value" ),
+				$( "#plans_slider" ).slider( "value" )
+			);
+		},
+		slide: function( event, ui ) {
+				var input_class = ($(this).attr("id"));
+				$("input." + input_class).val(ui.value*1000/100 + "%");
+		}
+	});
+});
+
 function drawWheel(){			
     var wheel = document.getElementById('wheel').getContext('2d');
 	
